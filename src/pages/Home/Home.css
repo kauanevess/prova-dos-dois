@@ -1,0 +1,368 @@
+.home {
+  min-height: 100vh;
+  padding: 42px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  background: transparent;
+}
+
+.folha {
+  width: min(100%, 720px);
+  min-height: 780px;
+  padding: 38px 44px 28px;
+
+  background: rgba(248, 246, 241, 0.96);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.22);
+}
+
+.folha::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 22px;
+  width: 1px;
+  background: #dfb7b7;
+}
+
+.home-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #85817a;
+}
+
+.numero-prova {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #bbb7af;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.home-conteudo {
+  width: min(100%, 520px);
+  margin: 80px auto 50px;
+}
+
+.home-mini {
+  margin: 0 0 18px;
+  font-family: monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #77736d;
+}
+
+.home h1 {
+  margin: 0;
+  font-size: clamp(58px, 10vw, 94px);
+  line-height: 0.82;
+  letter-spacing: -0.075em;
+  font-weight: 600;
+}
+
+.home-descricao {
+  margin: 38px 0 34px;
+  color: #66615a;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.home-linha {
+  height: 1px;
+  margin-bottom: 30px;
+  background: #d9d5ce;
+}
+
+.home-pergunta {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.jogadores {
+  display: grid;
+  gap: 10px;
+}
+
+.jogador-card {
+  width: 100%;
+  min-height: 74px;
+  padding: 12px 16px;
+  border: 1px solid #d6d2ca;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.jogador-card:hover {
+  background: #eeebe5;
+  border-color: #aaa59c;
+  transform: translateX(4px);
+}
+
+.jogador-letra {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #1c1c1c;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-family: monospace;
+}
+
+.jogador-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.jogador-info strong {
+  font-size: 15px;
+}
+
+.jogador-info small {
+  color: #8b867f;
+  font-size: 12px;
+}
+
+.jogador-seta {
+  font-size: 20px;
+}
+
+.home-footer {
+  margin-top: auto;
+  padding-top: 22px;
+  border-top: 1px solid #dedad3;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-family: monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #98938c;
+}
+
+@media (max-width: 600px) {
+  .home {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .folha {
+    min-height: 100vh;
+    padding: 28px 28px 22px 38px;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .folha::before {
+    left: 18px;
+  }
+
+  .home-conteudo {
+    margin-top: 65px;
+  }
+
+  .home h1 {
+    font-size: clamp(58px, 19vw, 82px);
+  }
+}
+
+.sala-etapa {
+  display: flex;
+  flex-direction: column;
+}
+
+.sala-voltar {
+  width: fit-content;
+  margin: 0 0 22px;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  font-family: monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  color: #8b867f;
+  cursor: pointer;
+}
+
+.sala-voltar:hover {
+  color: #191919;
+}
+
+.opcoes-sala {
+  display: grid;
+  gap: 10px;
+}
+
+.opcao-sala {
+  width: 100%;
+  min-height: 78px;
+  padding: 14px 16px;
+
+  border: 1px solid #d6d2ca;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  text-align: left;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.opcao-sala:hover {
+  background: #eeebe5;
+  border-color: #aaa59c;
+  transform: translateX(4px);
+}
+
+.opcao-sala-numero {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+
+  border: 1px solid #bbb7af;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.opcao-sala div {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.opcao-sala strong {
+  font-size: 14px;
+}
+
+.opcao-sala small {
+  font-size: 11px;
+  color: #8b867f;
+}
+
+.sala-texto {
+  margin: 0 0 22px;
+
+  color: #77726b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.sala-input {
+  width: 100%;
+  height: 64px;
+
+  margin-bottom: 12px;
+  padding: 0 18px;
+
+  border: 1px solid #c9c5bd;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.3);
+
+  font-family: monospace;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  color: #191919;
+
+  transition: 0.2s ease;
+}
+
+.sala-input:focus {
+  border-color: #191919;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.sala-input::placeholder {
+  color: #aaa59c;
+}
+
+.sala-botao-principal {
+  width: 100%;
+  min-height: 58px;
+
+  margin-top: 8px;
+  padding: 14px 18px;
+
+  border: 1px solid #191919;
+  background: #191919;
+
+  color: #f8f6f1;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.sala-botao-principal:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.sala-botao-principal:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.sala-erro {
+  margin: 4px 0 8px;
+  padding: 10px 12px;
+
+  border-left: 2px solid #191919;
+
+  background: rgba(0, 0, 0, 0.04);
+
+  font-family: monospace;
+  font-size: 10px;
+  line-height: 1.5;
+
+  color: #4f4b45;
+}

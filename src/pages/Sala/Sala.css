@@ -1,0 +1,204 @@
+.sala {
+  min-height: 100vh;
+  padding: 42px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+}
+
+.folha-sala {
+  width: min(100%, 720px);
+  min-height: 780px;
+  padding: 38px 44px 28px;
+
+  background: rgba(248, 246, 241, 0.96);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.22);
+}
+
+.folha-sala::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 22px;
+  width: 1px;
+  background: #dfb7b7;
+}
+
+.sala-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  color: #85817a;
+}
+
+.numero-sala {
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid #bbb7af;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+}
+
+.sala-conteudo {
+  width: min(100%, 520px);
+  margin: 80px auto 50px;
+}
+
+.sala-mini {
+  margin: 0 0 18px;
+
+  font-family: monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  color: #77736d;
+}
+
+.sala-conteudo h1 {
+  margin: 0;
+
+  font-size: clamp(48px, 8vw, 76px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  font-weight: 600;
+}
+
+.sala-descricao {
+  margin: 35px 0 24px;
+
+  color: #66615a;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.codigo-sala {
+  width: 100%;
+  padding: 22px;
+
+  border: 1px solid #aaa59c;
+
+  background: rgba(255, 255, 255, 0.35);
+
+  text-align: center;
+
+  font-family: monospace;
+  font-size: clamp(30px, 7vw, 46px);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+
+  color: #191919;
+}
+
+.botao-copiar {
+  width: 100%;
+
+  margin-top: 8px;
+  padding: 13px;
+
+  border: 1px solid #c9c5bd;
+  background: transparent;
+
+  font-family: monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  cursor: pointer;
+}
+
+.botao-copiar:hover {
+  background: #eeebe5;
+}
+
+.sala-linha {
+  height: 1px;
+  margin: 28px 0;
+
+  background: #d9d5ce;
+}
+
+.botao-comecar {
+  width: 100%;
+  min-height: 58px;
+
+  padding: 14px 18px;
+
+  border: 1px solid #191919;
+  background: #191919;
+
+  color: #f8f6f1;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.botao-comecar:hover {
+  transform: translateY(-2px);
+}
+
+.sala-footer {
+  margin-top: auto;
+  padding-top: 22px;
+
+  border-top: 1px solid #dedad3;
+
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  font-family: monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  color: #98938c;
+}
+
+@media (max-width: 600px) {
+  .sala {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .folha-sala {
+    min-height: 100vh;
+    padding: 28px 28px 22px 38px;
+
+    border: 0;
+    box-shadow: none;
+  }
+
+  .folha-sala::before {
+    left: 18px;
+  }
+
+  .sala-conteudo {
+    margin-top: 65px;
+  }
+}

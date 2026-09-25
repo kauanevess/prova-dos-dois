@@ -1,0 +1,436 @@
+.aguardando {
+  min-height: 100vh;
+  padding: 42px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+}
+
+.folha-aguardando {
+  width: min(100%, 720px);
+  min-height: 760px;
+
+  padding: 38px 44px 28px;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(248, 246, 241, 0.98);
+
+  border: 1px solid rgba(255, 255, 255, 0.65);
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.22),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.folha-aguardando::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 22px;
+
+  width: 1px;
+
+  background: rgba(190, 112, 112, 0.32);
+}
+
+.aguardando-cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #85817a;
+
+  font-family: monospace;
+  font-size: 10px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.aguardando-numero {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid #bbb7af;
+  border-radius: 50%;
+}
+
+.aguardando-conteudo {
+  width: min(100%, 520px);
+
+  margin: 70px auto 45px;
+}
+
+.etiqueta-aguardando {
+  color: #77736d;
+
+  font-family: monospace;
+  font-size: 10px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.aguardando h1 {
+  margin: 18px 0 30px;
+
+  font-size: clamp(55px, 9vw, 82px);
+
+  line-height: 0.88;
+
+  letter-spacing: -0.07em;
+}
+
+.aguardando-texto {
+  max-width: 450px;
+
+  margin: 0;
+
+  color: #69645e;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.linha-aguardando {
+  height: 1px;
+
+  margin: 32px 0;
+
+  background: #d9d5ce;
+}
+
+/* STATUS */
+
+.status-jogadores {
+  display: grid;
+  gap: 8px;
+}
+
+.status-card {
+  min-height: 72px;
+
+  padding: 12px 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border: 1px solid #d6d2ca;
+}
+
+.status-identidade {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.status-letra {
+  width: 39px;
+  height: 39px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #1c1c1c;
+
+  color: #fff;
+
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.status-identidade div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.status-identidade strong {
+  font-size: 13px;
+}
+
+.status-identidade small {
+  color: #96918a;
+
+  font-size: 10px;
+}
+
+.status-situacao {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #77716a;
+
+  font-family: monospace;
+  font-size: 9px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-bolinha {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #aaa59d;
+}
+
+.status-card.concluido .status-bolinha {
+  background: #45413c;
+}
+
+.status-card.esperando {
+  opacity: 0.7;
+}
+
+/* ESPERANDO */
+
+.espera {
+  min-height: 100px;
+
+  margin-top: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  border: 1px dashed #cbc6be;
+
+  color: #858079;
+}
+
+.espera p {
+  margin: 0;
+
+  font-family: monospace;
+  font-size: 10px;
+}
+
+.espera-pontos {
+  display: flex;
+
+  gap: 5px;
+}
+
+.espera-pontos span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #77716a;
+
+  animation: esperando 1.2s infinite ease-in-out;
+}
+
+.espera-pontos span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.espera-pontos span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes esperando {
+  0%,
+  60%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+/* PROVA LIBERADA */
+
+.prova-liberada {
+  margin-top: 25px;
+
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  border: 1px solid #bdb8b0;
+
+  background: #ebe8e2;
+}
+
+.liberada-check {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #1c1c1c;
+
+  color: white;
+}
+
+.prova-liberada strong {
+  font-size: 13px;
+}
+
+.prova-liberada p {
+  margin: 4px 0 0;
+
+  color: #77716a;
+
+  font-size: 11px;
+}
+
+/* BOTÕES */
+
+.aguardando-acoes {
+  margin-top: 30px;
+
+  display: flex;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.voltar-inicio,
+.comecar-prova {
+  min-height: 46px;
+
+  padding: 0 18px;
+
+  font: inherit;
+  font-size: 11px;
+
+  cursor: pointer;
+}
+
+.voltar-inicio {
+  border: 1px solid #d0cbc3;
+
+  background: transparent;
+
+  color: #625e58;
+}
+
+.comecar-prova {
+  border: 1px solid #1c1c1c;
+
+  background: #1c1c1c;
+
+  color: #fff;
+}
+
+.comecar-prova:hover {
+  background: #343434;
+}
+
+/* FOOTER */
+
+.aguardando-footer {
+  margin-top: auto;
+
+  padding-top: 22px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  border-top: 1px solid #dedad3;
+
+  color: #98938c;
+
+  font-family: monospace;
+  font-size: 9px;
+
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .aguardando {
+    padding: 15px 10px;
+  }
+
+  .folha-aguardando {
+    min-height: calc(100vh - 30px);
+
+    padding: 28px 25px 22px 36px;
+  }
+
+  .folha-aguardando::before {
+    left: 18px;
+  }
+
+  .aguardando-conteudo {
+    margin-top: 55px;
+  }
+
+  .aguardando h1 {
+    font-size: 57px;
+  }
+
+  .status-card {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .status-situacao {
+    margin-left: 52px;
+  }
+
+  .aguardando-acoes {
+    align-items: stretch;
+
+    flex-direction: column-reverse;
+  }
+
+  .voltar-inicio,
+  .comecar-prova {
+    width: 100%;
+  }
+}
