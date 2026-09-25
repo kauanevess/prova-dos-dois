@@ -1,14 +1,47 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "../../services/supabase";
 import "./Sala.css";
 
 function Sala() {
   const navigate = useNavigate();
 
   const codigo = localStorage.getItem("partida-codigo");
+  const partidaId = localStorage.getItem("partida-id");
   const jogador = localStorage.getItem("jogador-atual");
 
   const nome = jogador === "kaua" ? "Kauã" : "Giovanna";
   const outro = jogador === "kaua" ? "Giovanna" : "Kauã";
+
+  useEffect(() => {
+    if (!partidaId) {
+      navigate("/", { replace: true });
+      return;
+    }
+
+    async function prepararFinal() {
+      const { error } = await supabase
+        .from("final_jogo")
+        .upsert(
+          {
+            partida_id: partidaId,
+          },
+          {
+            onConflict: "partida_id",
+            ignoreDuplicates: true,
+          }
+        );
+
+      if (error) {
+        console.error(
+          "erro ao preparar o final:",
+          error
+        );
+      }
+    }
+
+    prepararFinal();
+  }, [partidaId, navigate]);
 
   function copiarCodigo() {
     if (!codigo) return;
